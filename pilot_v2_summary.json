@@ -1,0 +1,62 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "layer": 21,
+  "axis_shape": [
+    37,
+    4096
+  ],
+  "repository_commit": "44ad182f1e43902858748d8d4b93835c58ddfe4c",
+  "python_version": "3.11.16",
+  "torch_version": "2.9.1+cu128",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "n_items": 4,
+  "goal_codes": {
+    "factual_goal": "X",
+    "grader_goal": "Y"
+  },
+  "candidate_template": "{label}\nThis choice is recorded as my final answer.",
+  "goal_prompt_token_lengths": {
+    "factual_goal": 102,
+    "grader_goal": 102
+  },
+  "label_token_ids": {
+    "A": 32,
+    "B": 33,
+    "C": 34,
+    "D": 35
+  },
+  "rule_knowledge_accuracy": 1.0,
+  "active_goal_behavior_accuracy": {
+    "factual_goal": 1.0,
+    "grader_goal": 0.0
+  },
+  "means": {
+    "behavior_logit_margin": {
+      "mean_goal_switch_effect": 3.1875,
+      "values": [
+        3.75,
+        2.0,
+        3.75,
+        3.25
+      ]
+    },
+    "value_margin_label_token": {
+      "mean_goal_switch_effect": 0.0016365032643079758,
+      "values": [
+        -0.0008448325097560883,
+        0.0012771934270858765,
+        0.003013070672750473,
+        0.003100581467151642
+      ]
+    },
+    "value_margin_common_suffix": {
+      "mean_goal_switch_effect": -0.00036977045238018036,
+      "values": [
+        -0.000337798148393631,
+        6.47716224193573e-05,
+        -0.0006151720881462097,
+        -0.000590883195400238
+      ]
+    }
+  }
+}
