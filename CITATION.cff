@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Before the Answer Flips: A Pilot Stress Test of Qwen3-8B's Value Axis Under Competing Objectives"
+message: "If you use this code or data, please cite this repository."
+type: software
+authors:
+  - family-names: Rewar
+    given-names: Jaitra
+repository-code: "https://github.com/jaitra-rewar4/value-axis-goal-switch-pilot"
+license: MIT
+version: 1.0.0
+date-released: 2026-09-04
