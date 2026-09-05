@@ -8,10 +8,10 @@ The question was simple: when an instruction pushes Qwen3-8B away from factual c
 
 ## Read the report
 
-- [Full report](docs/REPORT.md)
-- [Compact item-level results](results/compact_results.csv)
-- [Revised pilot raw data](results/pilot_v2_raw.json)
-- [Revised pilot summary](results/pilot_v2_summary.json)
+- [Full report](REPORT.md)
+- [Compact item-level results](pilot_v2_compact.csv)
+- [Revised pilot raw data](pilot_v2_raw.json)
+- [Revised pilot summary](pilot_v2_summary.json)
 - [Agent-use disclosure](AGENT_USE.md)
 
 ## Result
@@ -24,13 +24,15 @@ The experiment produced a plausible positive-looking answer-token result. The st
 
 ## Repository map
 
-- `scripts/smoke_test_value_axis.py`: verifies model, layer hook, axis loading, and projection.
-- `scripts/pilot_conflicting_objectives.py`: first pilot, kept because its failed manipulation motivated the redesign.
-- `scripts/pilot_goal_switch_v2.py`: balanced active-goal pilot used in the report.
+- `smoke_test_value_axis.py`: verifies model, layer hook, axis loading, and projection.
+- `pilot_conflicting_objectives.py`: first pilot, kept because its failed manipulation motivated the redesign.
+- `pilot_goal_switch_v2.py`: balanced active-goal pilot used in the report.
 - `analysis/recompute_headline_results.py`: recomputes headline numbers and verifies structural controls.
-- `results/`: raw JSON and compact tables.
-- `figures/`: figures generated from saved V2 outputs.
-- `docs/`: report and research log.
+- `pilot_v1_raw.json` and `pilot_v1_summary.json`: first-pilot outputs.
+- `pilot_v2_raw.json`, `pilot_v2_summary.json`, and `pilot_v2_compact.csv`: revised-pilot outputs.
+- `fig1_behavior_goal_switch.png`, `fig2_value_label_goal_switch.png`, and `fig3_value_suffix_goal_switch.png`: figures generated from the revised pilot.
+- `REPORT.md`: full write-up.
+- `AGENT_USE.md`: LLM and coding-agent disclosure.
 
 ## Reproduction
 
@@ -44,7 +46,7 @@ uv sync
 source .venv/bin/activate
 ```
 
-Copy the three scripts into that repository root and run:
+Copy the three experiment scripts from this repository into that repository root and run:
 
 ```bash
 python smoke_test_value_axis.py
@@ -68,6 +70,10 @@ python analysis/recompute_headline_results.py
 - Upstream commit: `44ad182f1e43902858748d8d4b93835c58ddfe4c`
 - Goal prompt length: 102 tokens in both conditions
 - Final sample: 4 paired items
+
+## Scope
+
+This is a small exploratory pilot, not a general evaluation of the Value Axis. It does not show reward hacking, a persistent hidden goal, or that the Value Axis generally succeeds or fails. The claim is narrower: behavior shifted consistently toward the grader proxy, while the internal measurement depended on where it was taken.
 
 ## References
 
