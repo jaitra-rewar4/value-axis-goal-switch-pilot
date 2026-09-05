@@ -1,5 +1,9 @@
-# Use of agentic tools
+# LLM and agent use
 
-Agentic tools were used for code scaffolding, debugging the remote GPU setup, checking calculations, and producing initial plots. The exact scripts, prompts, raw JSON outputs, and upstream repository commit are included. The experimental design used explicit go/no-go checks, and the first pilot was not scaled after its manipulation failed. The headline values can be independently recomputed with `analysis/recompute_headline_results.py`.
+I used GPT-5.6 Sol through ChatGPT and coding-agent workflows throughout this project. Because I was new to much of the mechanistic-interpretability tooling, I used it to help understand the Value Axis paper and repository, set up and debug the remote GPU environment, scaffold and debug experiment code, think through alternative explanations, produce initial plots, and critique the write-up.
 
-Before submission, Jaitra should personally read every line, rerun the recomputation script, inspect all four paired contexts, and rewrite any sentence that does not sound like his own voice.
+I did not use an LLM judge for any reported result. The measurements in the report come from saved Qwen3-8B logits and layer-21 activations. The repository includes the experiment scripts, raw JSON outputs, compact results, figures, and the upstream Value Axis commit used for the run.
+
+I tried to prioritize checks that could change the conclusion rather than treating an agent-generated summary as evidence. The first pilot was kept after its manipulation check failed instead of being hidden or scaled. The revised experiment used matched factual and grader conditions, balanced demonstrations, single-token answer labels, equal-length goal prompts, and an identical-suffix control. The headline quantities can also be recomputed from the released raw outputs with `analysis/recompute_headline_results.py`.
+
+The control that mattered most was the identical-suffix measurement. The answer-label Value Axis result initially looked mildly positive, but the matched-suffix result slightly reversed, so I narrowed the conclusion rather than interpreting the nicer-looking result as confirmation. I would be more confident in the arithmetic and saved measurements than in the broader interpretation of this four-item pilot. I also did not independently audit every line of the upstream Value Axis implementation, and the experiment is too small to support broad generalization.
