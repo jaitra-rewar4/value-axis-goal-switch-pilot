@@ -6,8 +6,7 @@
 MATS 12.0 application research task  
 September 2026
 
-**Code and full raw results:** `https://github.com/jaitra-rewar4/value-axis-goal-switch-pilot`  
-*This link becomes active after the prepared repository bundle is published.*
+**Code and full raw results:** `https://github.com/jaitra-rewar4/value-axis-goal-switch-pilot`
 
 # Executive Summary
 
